@@ -1,9 +1,26 @@
 {
-    "users": [
-        {
-            "id": 1, "name": "Ava"
-        }
-    ],
-    "albums": [],
-    "photos": []
+  "users": [
+    {
+      "id": 1,
+      "name": "Ava"
+    },
+    {
+      "name": "Matt Carroll",
+      "id": 2
+    },
+    {
+      "name": "Mathew Auer",
+      "id": 3
+    },
+    {
+      "name": "Ada Terry",
+      "id": 4
+    },
+    {
+      "name": "Marvin Ryan",
+      "id": 5
+    }
+  ],
+  "albums": [],
+  "photos": []
 }
