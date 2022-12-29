@@ -10,9 +10,11 @@ import { useThunk } from '../hooks/use-thunk';
 const UsersList = () => {
   const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers)
   const [doCreateUser, isCreateingUser, createingUserError] = useThunk(addUser)
+
   const {data} = useSelector(state => {
     return state.users;
   })
+
   useEffect(() => {
     doFetchUsers();
   }, [doFetchUsers]);
@@ -20,6 +22,7 @@ const UsersList = () => {
   if (isLoadingUsers) {
     return <Skeleton times={6} extraClasses="h-10 w-full"/>
   }
+  
   if(loadingUsersError){
     return <div>Error fetching data...</div>
   }
@@ -39,11 +42,7 @@ const UsersList = () => {
     <div>
       <div className="flex flex-row justify-between m-3">
         <h1 className="m-2 text-xl">Users</h1>
-        {
-          isCreateingUser
-          ? 'creating user...'
-          : <Button onClick={handleUserAdd}> + Add User</Button>
-        }
+          <Button loading={isCreateingUser} onClick={handleUserAdd}> + Add User</Button>
         {
           createingUserError && 'Error creating user...'
         }
