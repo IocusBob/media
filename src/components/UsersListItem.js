@@ -2,6 +2,7 @@ import React from 'react'
 import { GoTrashcan } from 'react-icons/go';
 import Button from './Button';
 import ExpandablePanel from './ExpandablePanel';
+import AlbumsList from './AlbumsList';
 import { removeUser } from '../store';
 import { useThunk } from '../hooks/use-thunk';
 
@@ -20,8 +21,8 @@ const UsersListItem = ({user}) => {
                     </React.Fragment>
     return (
         <ExpandablePanel header={header}>
-            CONTENT!!!
-            </ExpandablePanel>
+            <AlbumsList user={user} />
+        </ExpandablePanel>
                     
     )
 }
